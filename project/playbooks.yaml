@@ -1,0 +1,26 @@
+---
+- name: this is my first play.
+  hosts: servera
+  tasks: 
+    - name: verifying authentication
+      ping:
+
+    - name: create user
+      user:
+        name: rajat
+        state: present
+
+    - name: install package
+      yum:
+        name: httpd
+        state: latest
+
+- name: This is my second play
+  hosts: serverb
+  tasks:
+  - name: creating another user
+    user:
+      name: serverb
+      state: present
+
+...
