@@ -1,0 +1,20 @@
+1. playbooks are a list of plays.
+2. plays are list of tasks.
+3. tasks are module or command executed.
+
+playbooks and plays are written using yaml format.
+yaml only contains of list and dictionaries.
+2 rules of writing yaml file.
+if items do not belong to each other will be on same level.
+child items will be indented along with the parent.
+
+wsriting playbook - playbook.yml
+yaml file starts with ---
+'-' single dash means start of the list.
+'...' end of the playbooknfile.
+# after writing the playbooks run ansible-playbook playbook.yml --syntax-check
+
+syntax check will only check the playbook.
+indentation warning,
+
+
