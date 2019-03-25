@@ -1,0 +1,14 @@
+servera
+serverb
+serverc
+serverd
+
+[myself]
+localhost
+
+[intranetweb]
+servera.lab.example.com
+
+[everyone:children]
+myself
+intranetweb
