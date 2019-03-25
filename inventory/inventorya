@@ -1,0 +1,60 @@
+servera.lab.example.com
+serverb.lab.example.com
+192.168.0.1
+192.168.0.2
+
+[web]
+web1.example.com
+web2.example.com
+
+
+[db]
+db1.example.com
+db2.example.com
+
+## List all hosts
+# ansible all --list-hosts
+
+## List ungrouped hosts
+# ansible -i inventory --list-hosts ungrouped
+
+## List webservers groups
+# ansible --list-hosts webservers
+
+## Sample inventory files 
+## Hostname 			Purpose		Location	Environment
+## servera.lab.example.com	Web Server	Raleigh		Development
+## serverb.lab.example.com	Web Server	Raleigh		Testing
+## serveca.lab.example.com	Web Server	Mountain View	Production
+## serverd.lab.example.com	Web Server	London		production
+
+## 
+
+[webservers]
+server[a:d].lab.example.com
+
+[raleigh]
+servera.lab.example.com
+serverb.lab.example.com
+
+[mountainview]
+serverc.lab.example.com
+
+[london]
+serverd.lab.example.com
+
+[development]
+servera.lab.example.com
+
+[testing]
+serverb.lab.example.com
+
+[production]
+serverc.lab.example.com
+serverd.lab.example.com
+
+[us:children]
+raleigh
+mountainview
+
+## We can use a variation of ansible host-or-group -i inventory --list hosts command to verify the managed hosts
