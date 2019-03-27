@@ -1,0 +1,25 @@
+
+#For RHEL, using mariadb as the database service
+- name: Set the 'db_service' fact
+  set_fact:
+    db_service: mariadb
+
+#RHEL packages for mariadb service
+- name: Ensure database packages are installed
+  yum:
+    name:
+      - mariadb-server
+      - mariadb-bench
+      - mariadb-libs
+      - mariadb-test
+
+- name: Ensure the database service is started
+  service:
+    name: "{{ db_service }}"
+    state: started
+    enabled: true
+
+#Below tasks are also reused by other distros
+- name: Create Database Users
+  include_tasks: database_users_tasks.yml
+

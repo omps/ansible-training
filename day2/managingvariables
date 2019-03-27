@@ -1,0 +1,96 @@
+2. How to call a variable
+in the beginning of the line
+"{{ var_name }}" - Quote the variable
+"{{ var_name }} is user1" - Quote the complete line if variable is followed by some text
+this is {{ var_name }} - variable is defined in normal curly braces if anywhere in the line.
+
+3. how to manage a variable
+ansible variable precedence - 2.7
+        command line values (eg “-u user”)
+        role defaults [1]
+        inventory file or script group vars [2]
+        inventory group_vars/all [3]
+        playbook group_vars/all [3]
+        inventory group_vars/* [3]
+        playbook group_vars/* [3]
+        inventory file or script host vars [2]
+        inventory host_vars/* [3]
+        playbook host_vars/* [3]
+        host facts / cached set_facts [4]
+        play vars
+        play vars_prompt
+        play vars_files
+        role vars (defined in role/vars/main.yml)
+        block vars (only for tasks in block)
+        task vars (only for the task)
+        include_vars
+        set_facts / registered vars
+        role (and include_role) params
+        include params
+        extra vars (always win precedence)
+
+
+Variable example
+#+BEGIN_SRC yaml
+---
+- name: Testing
+  hosts: servera
+  become: true
+  vars_files:
+  - array # Filename
+  tasks:
+  - name : creating user {{ user }}
+    user:
+      name: "{{ user }}"
+      state" present
+    register: out
+  -name: showing the output
+   debug:
+     var: out
+ #+END_SRC
+
+
+#+BEGIN_SRC yaml example of using yum
+---
+- name: Testing
+  hosts: servera
+  become: true
+  vars_files:
+  - array # Filename
+  tasks:
+  - name : Installing a package
+    yum:
+      name: "{{ pkg }}"
+      state: latest
+    register: out
+  -name: showing the output
+   debug:
+     var: out.results
+ #+END_SRC
+
+
+managing secrets
+ansible-vault create hosts_vars/servera/user --new-vault-id=v1
+ansible-vault create hosts_vars/servera/password --new-vault-id=v2
+
+ansible-vault decrypt --vault-id=v2 hosts_vars/servera/password
+ansible-vault encrypt hosts_vars/servera/omps
+
+inside ansible.cfg
+#+BEGIN_SRC ansible.cfg
+[defaults]
+inventory = inventory
+remote_user = devops
+ask_pass = false
+host_key_checking = false
+vault_identity_list = files@new-passwrod, files@password #files is just a keyword not a dir
+
+[privilige_escalations]
+become = true
+
+
+#+END_SRC
+[defaults]
+
+
+

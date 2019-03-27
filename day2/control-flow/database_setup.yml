@@ -1,0 +1,29 @@
+---
+- name: Database Setup play
+  hosts: database_servers
+  vars:
+    min_ram_size_bytes: 500000000
+    supported_distros:
+      - RedHat
+      #- Centos
+  tasks:
+    - name: Setup Database tasks on supported hosts w/ Min. RAM
+      include_tasks: "{{ ansible_distribution }}_database_tasks.yml"
+      when:
+        - ansible_distribution in supported_distros
+        - ansible_memtotal_mb*1024*1024 >= min_ram_size_bytes
+
+    - name: Print a message for unsupported Distros
+      debug:
+        msg: >
+          {{ inventory_hostname }} is a
+          {{ ansible_distribution }}-based host, which is not one
+          of the supported distributions ({{ supported_distros }})
+      when: ansible_distribution not in supported_distros
+
+    - name: Print a message for systems with insufficient RAM
+      debug:
+        msg: >
+          {{ inventory_hostname }} does not meet the minimum
+          RAM requirements of {{ min_ram_size_bytes }} bytes.
+      when: ansible_memtotal_mb*1024*1024 < min_ram_size_bytes

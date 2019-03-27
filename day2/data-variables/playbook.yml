@@ -1,0 +1,51 @@
+- name: Deploy and start apache HTTPD service
+  hosts: webserver
+  vars:
+    web_pkg: httpd
+    firewall_pkg: firewalld
+    web_service: httpd
+    firewall_service: firewalld
+    python_pkg: python-httplib2
+    rule: http
+
+  tasks:
+    - name: 
+      yum:
+        name:
+          - "{{ web_pkg }}"
+          - "{{ firewall_pkg }}"
+          - "{{ python_pkg }}"
+        state: latest
+    
+    - name: the {{ firewall_service }} service is enabled and started
+      service:
+        name: "{{ firewall_service }}"
+        enabled: true
+        state: started
+
+    - name: the {{ web_service }} service is enabled and started
+      service:
+        name: "{{ web_service }}"
+        enabled: true
+        state: started
+
+    - name: web content is in place
+      copy:
+        content: "Example Web content"
+        dest: /var/www/html/index.html
+
+    - name: The firewall port for {{ rule }} is open
+      firewalld: 
+        service: "{{ rule }}"
+        permanent: true
+        immediate: true
+        state: enabled
+
+- name: verfiy apache service
+  hosts: localhost
+  become: false
+  tasks:
+  - name: Ensure the server is reachable
+    uri:
+      url: http://servera.lab.example.com
+      status_code: 200

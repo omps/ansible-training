@@ -1,0 +1,6 @@
+[database_servers]
+servera.lab.example.com
+
+[web_servers]
+serverb.lab.example.com
+

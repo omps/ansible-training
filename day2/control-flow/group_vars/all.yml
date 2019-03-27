@@ -1,0 +1,14 @@
+user_list:
+  - name: John Davis
+    username: jdavis
+    role: dbadmin
+  - name: Jennifer Smith
+    username: jsmith
+    role: dbuser
+  - name: Sarah Johnson
+    username: sjohnson
+    role: webadmin
+  - name: Matt Jones
+    username: mjones
+    role: webdev
+

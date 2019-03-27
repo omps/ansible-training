@@ -1,0 +1,3 @@
+host_permission_groups:
+  - dbadmin
+  - dbuser
