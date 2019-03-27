@@ -1,0 +1,18 @@
+---
+# tasks file for firewall
+- name: install firewalld
+  yum:
+    name: firewalld
+    state: present
+
+- name: adding firewalld service
+  firewalld:
+    service: "{{ service }}"
+    permanent: yes
+    state: enabled
+    immediate: true
+
+- name: start the services
+  service:
+    name: firewalld
+    state: enabled

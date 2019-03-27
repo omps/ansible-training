@@ -1,0 +1,26 @@
+---
+- name: this is for testing task priorities
+  hosts: all
+  become: true
+  pre_tasks:
+    - name: this is a pre task
+      command: id
+      notify:
+        - pre
+  roles:
+    - test
+  tasks:
+    - name: this is task
+      command: id
+      notify:
+        - task
+  post_tasks:
+    - name: this is post task
+      command: id
+      notify
+        - post
+  handlers:
+    - pre
+      name: This is handler for Pre_Task section.
+      debug:
+

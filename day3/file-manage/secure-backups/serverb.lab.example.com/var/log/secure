@@ -1,0 +1,28 @@
+Mar 25 07:22:52 serverb sshd[3959]: Accepted publickey for devops from 172.25.250.254 port 51470 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+Mar 25 07:22:53 serverb sshd[3959]: pam_unix(sshd:session): session opened for user devops by (uid=0)
+Mar 25 07:22:53 serverb sudo:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-laukhdkdgfvahacqfypiydmgxgxissdl; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1553512972.67-164077800167162/AnsiballZ_setup.py
+Mar 25 07:22:53 serverb sudo: pam_unix(sudo:session): session opened for user root by devops(uid=0)
+Mar 25 07:22:54 serverb sudo: pam_unix(sudo:session): session closed for user root
+Mar 25 07:22:54 serverb sudo:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-lsewqunejeexqgigtllsonbxsrrgihek; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1553512974.46-142275931773368/AnsiballZ_user.py
+Mar 25 07:22:54 serverb sudo: pam_unix(sudo:session): session opened for user root by devops(uid=0)
+Mar 25 07:22:54 serverb useradd[4163]: new group: name=serverb, GID=1002
+Mar 25 07:22:54 serverb useradd[4163]: new user: name=serverb, UID=1002, GID=1002, home=/home/serverb, shell=/bin/bash
+Mar 25 07:22:54 serverb sudo: pam_unix(sudo:session): session closed for user root
+Mar 25 07:23:55 serverb sshd[3962]: Received disconnect from 172.25.250.254 port 51470:11: disconnected by user
+Mar 25 07:23:55 serverb sshd[3962]: Disconnected from 172.25.250.254 port 51470
+Mar 25 07:23:55 serverb sshd[3959]: pam_unix(sshd:session): session closed for user devops
+Mar 25 23:06:38 serverb polkitd[2617]: Loading rules from directory /etc/polkit-1/rules.d
+Mar 25 23:06:38 serverb polkitd[2617]: Loading rules from directory /usr/share/polkit-1/rules.d
+Mar 25 23:06:38 serverb polkitd[2617]: Finished loading, compiling and executing 2 rules
+Mar 25 23:06:38 serverb polkitd[2617]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Mar 25 23:06:51 serverb sshd[3157]: Server listening on 0.0.0.0 port 22.
+Mar 25 23:06:51 serverb sshd[3157]: Server listening on :: port 22.
+Mar 26 08:57:05 serverb sshd[3157]: Received signal 15; terminating.
+Mar 26 23:42:32 serverb polkitd[2593]: Loading rules from directory /etc/polkit-1/rules.d
+Mar 26 23:42:32 serverb polkitd[2593]: Loading rules from directory /usr/share/polkit-1/rules.d
+Mar 26 23:42:33 serverb polkitd[2593]: Finished loading, compiling and executing 2 rules
+Mar 26 23:42:33 serverb polkitd[2593]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Mar 26 23:42:49 serverb sshd[3149]: Server listening on 0.0.0.0 port 22.
+Mar 26 23:42:49 serverb sshd[3149]: Server listening on :: port 22.
+Mar 27 02:03:15 serverb sshd[3496]: Accepted publickey for root from 172.25.250.254 port 55714 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+Mar 27 02:03:15 serverb sshd[3496]: pam_unix(sshd:session): session opened for user root by (uid=0)

@@ -1,0 +1,38 @@
+# Roles Priority
+pre-task
+  handlers
+roles
+  handlers
+tasks
+  handlers
+post_tasks
+  handlers
+handlers
+
+
+# Directory structure
+projects
+ playbook.yml
+ ansible.cfg
+ inventory
+ roles/
+   web
+   firewall/
+   ├── defaults
+   │   └── main.yml
+   ├── files
+   ├── handlers
+   │   └── main.yml
+   ├── meta
+   │   └── main.yml
+   ├── README.md
+   ├── tasks
+   │   └── main.yml
+   ├── templates
+   ├── tests
+   │   ├── inventory
+   │   └── test.yml
+   └── vars
+       └── main.yml
+
+

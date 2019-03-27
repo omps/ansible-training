@@ -1,0 +1,549 @@
+    1  lab --help
+    2  lab 
+    3  lab help
+    4  lab intro-install setup
+    5  lab intro-install yum list installed python
+    6  yum list installed python
+    7  sudo yum list installed ansible
+    8  ansible --version
+    9  sudo yum list installed ansible
+   10  lab intro-install setup
+   11  sudo yum list installed ansib
+   12  sudo yum install ansible
+   13  lab intro-install cle
+   14  whereis l
+   15  less /usr/local/bin/la
+   16  sudo yum install python-pip
+   17  nano
+   18  emacs
+   19  vim inventory
+   20  mv inventory inventorya
+   21  mkdir inventory
+   22  mv inventorya inventory/
+   23  ls -l
+   24   
+   25  git clone git@github.com:omps/ansible-training
+   26  yum install git
+   27  sudo yum install git
+   28  yum install git
+   29  git clone git@github.com:omps/ansible-training
+   30  git clone https://github.com/omps/ansible-training
+   31  ls -lrt
+   32  cd ansible-training/
+   33  ls -l
+   34  clear
+   35  sudo vim inventory
+   36  vim inventory
+   37  ls -l
+   38  cd ..
+   39  ls -l
+   40  mv inventory/ ansible-training/
+   41  ls -l
+   42  cd ansible-training/
+   43  cd inventory/
+   44  ls -l
+   45  vi inventorya 
+   46  git commit -am "added the inventory file, lesson managing inventory completed."
+   47  git add .
+   48  git commit -am "added the inventory file, lesson managing inventory completed."
+   49  git push origin master
+   50  vim understanding_ansible_cfg
+   51  grep '^[' /etc/ansible/ansible.cfg 
+   52  grep ^[ /etc/ansible/ansible.cfg 
+   53  grep '^[' /etc/ansible/ansible.cfg 
+   54  grep "^[" /etc/ansible/ansible.cfg 
+   55  grep "^\[" /etc/ansible/ansible.cfg 
+   56  grep "^\[" /etc/ansible/ansible.cfg >> understanding_ansible_cfg 
+   57  cat understanding_ansible_cfg 
+   58  vim understanding_ansible_cfg
+   59  grep "^\[" -A 3 /etc/ansible/ansible.cfg >> understanding_ansible_cfg 
+   60  grep "^\[" -A 3 /etc/ansible/ansible.cfg
+   61  vim understanding_ansible_cfg
+   62  mv understanding_ansible_cfg ../
+   63  cd ..
+   64  mkdir project
+   65  cd project/
+   66  vim ansible.cfg
+   67  ansible --version
+   68  echo "which inventory file is in use" >> ../understanding_ansible_cfg 
+   69  echo "ansible --version" >> ../understanding_ansible_cfg 
+   70  ansible --version >> ../understanding_ansible_cfg 
+   71  touch ansible.cfg
+   72  ansible --list-hosts all
+   73  ansible --version
+   74  vim inventory
+   75  vim ansible.cfg 
+   76  ifconfig -a
+   77  cd ..
+   78  vim understanding_ansible_cfg 
+   79  pwd
+   80  ls -l
+   81  cd project/
+   82  ls -l
+   83  vim inventory 
+   84  vim ansible.cfg 
+   85  ansible myself --list-hosts
+   86  ansible everyone --list-hosts
+   87  git status
+   88  cd ..
+   89  git add .
+   90  git commit -am "Managing ansible configuration file"
+   91  git push
+   92  cd project/
+   93  ls -l
+   94  ansible-doc -l
+   95  cd ..
+   96  vim running_ad_hoc_commands
+   97  ansible-doc user
+   98  ansible-doc ping
+   99  ansible -m ping servers
+  100  cd project
+  101  ls -l
+  102  cat inventory 
+  103  ansible -m ping servera
+  104  echo "## The ping command \n ##ansible -m ping servera" >> ../running_ad_hoc_commands 
+  105  cat ../running_ad_hoc_commands 
+  106  echo "##useradd using ansible" >> ../running_ad_hoc_commands 
+  107  echo "ansible -m user -a "name=rajat state=present" servera -b" >> ../running_ad_hoc_commands 
+  108  ansible -m user -a "name=rajat state=present" servera 
+  109  ansible -m user -a "name=rajat state=present" servera -b
+  110  ansible -m user -a "name=rajat state=present" servera
+  111  vim ../running_ad_hoc_commands 
+  112  git status
+  113  git commit -am "running ad hoc commands"
+  114  git add .
+  115  git commit -am "running ad hoc commands"
+  116  cd ..
+  117  git add .
+  118  git commit -am "running ad hoc commands"
+  119  git config --global user.name "Om Prakash Singh"
+  120  git config --global user.email "omps@omps.in"
+  121  git push origin master
+  122  git pull
+  123  git push origin master
+  124  git status
+  125  git add .
+  126  git commit -am "running ad hoc commands"
+  127  git push origin master
+  128  pwd
+  129  vim working_with_playbooks
+  130  vim playbooks.yaml
+  131  vim working_with_playbooks
+  132  vim playbooks.yaml
+  133  mv playbooks.yaml project/
+  134  ls -l
+  135  mkdir day1
+  136  mv running_ad_hoc_commands understanding_ansible_cfg working_with_playbooks day1/
+  137  ls -l
+  138  cd project/
+  139  ls -l
+  140  vim ../day1/working_with_playbooks 
+  141  vi playbooks.yaml 
+  142  ansible-playbook playbooks.yaml -b
+  143  ansible playbooks.yaml  --syntax-check
+  144  ansible-playbook playbooks.yaml --syntax-check
+  145  vi playbooks.yaml 
+  146  ansible-playbook playbooks.yaml --syntax-check
+  147  vi playbooks.yaml 
+  148  ansible-playbook playbooks.yaml --syntax-check
+  149  vi playbooks.yaml 
+  150  ansible-playbook playbooks.yaml --syntax-check
+  151  ansible-playbook playbooks.yaml -b
+  152  echo "ansible-doc -s user    ##List all the options for user module" >> ../day1/understanding_ansible_cfg 
+  153  echo "add custom modules to library and add the library in ansile.cfg" >> ../day1/understanding_ansible_cfg 
+  154  vi ansible.cfg 
+  155  mkdir library
+  156  ansible --version
+  157  mkdir omps
+  158  vi ansible.cfg 
+  159  ansible --version
+  160  vi ansible.cfg 
+  161  ansible --version
+  162  git add .
+  163  git commit -am "working with playbooks"
+  164  git push origin master
+  165  git status
+  166  git add .
+  167  git status
+  168  cd ..
+  169  git add .
+  170  git status
+  171  git commit -am "restructuing"
+  172  git push
+  173  ls 
+  174  pwd
+  175  cd ansible-training/
+  176  ls -l
+  177  lab playbook-basic setup
+  178  vim ~/.vimrc
+  179  pwd
+  180  ls -l
+  181  cd 
+  182  ls -l
+  183  cd playbook-basic/
+  184  ls -l
+  185  pwd
+  186  cd ..
+  187  mv playbook-basic/ ansible-training/
+  188  ls -l
+  189  cd ansible-training/
+  190  cd playbook-basic/
+  191  ls -l
+  192  vim site.yml
+  193  ansible-playbook --syntax-check
+  194  ansible-playbook --syntax-check site.yml
+  195  ansible-playbook site.yml
+  196  curl serverc.example.com
+  197  curl serverc.lab.example.com
+  198  pwd
+  199  cd ..
+  200  ls -l
+  201  mkdir day2
+  202  cd day2
+  203  vi README
+  204  vim managingvariables
+  205  sudo yum -y install emacs
+  206  emacs
+  207  bg
+  208  ls -l
+  209  cd ..
+  210  ls
+  211  cd playbook-basic/
+  212  ls -l
+  213  mkdir group_vars
+  214  pwd
+  215  cd ~/.emacs.d
+  216  ls -l
+  217  git clone 
+  218  clear
+  219  lab data-variables setup
+  220  ls -l
+  221  cd 
+  222  mv data-variables/ ansible-training/
+  223  ls -l
+  224  cd ansible-training/
+  225  ls -l
+  226  cd data-variables/
+  227  ls -l
+  228  vim playbook.yml 
+  229  ansible-playbook --syntax-check playbook.yml
+  230  vim playbook.yml 
+  231  ansible-playbook --syntax-check playbook.yml
+  232  vim playbook.yml 
+  233  ansible-playbook --syntax-check playbook.yml
+  234  vim playbook.yml 
+  235  ansible-playbook --syntax-check playbook.yml
+  236  ansible-playbook playbook.yml 
+  237  lab data-secret setup
+  238  cd ..
+  239  ls -l
+  240  cd ..
+  241  ls 
+  242  mv data-secret/ ansible-training/
+  243  cd ansible-training/
+  244  ls -l
+  245  cd data-secret/
+  246  ls -l
+  247  ansible-vault edit secret.yml 
+  248  vim create_users.yml
+  249  ansible-playbook --syntax-check --ask-vault-pass create_users.yml 
+  250  echo 'redhat' > vault-pass
+  251  chmod 0600 vault-pass 
+  252  ansible-playbook --vault-password-file=vault-pass create_users.yml 
+  253  vi inventory/
+  254  cat inventory/hosts 
+  255  ansible-playbook --vault-password-file=vault-pass create_users.yml 
+  256   create_users.yml
+  257  cat create_users.yml
+  258  ansible-playbook --vault-password-file=vault-pass create_users.yml 
+  259  lab data-facts setup
+  260  cd ..
+  261  ls -l
+  262  pwd
+  263  cd ..
+  264  ls -l
+  265  mv data-facts/ ansible-training/
+  266  ls -l
+  267  cd ansible-training/
+  268  ls -l
+  269  cd data-facts/
+  270  vim playbook.yml
+  271  ansible-playbook --syntax-check
+  272  ansible-playbook --syntax-check playbook.yml 
+  273  echo "# Run ad-hoc command to check the status of the package on the machine. $ ansible servera.lab.example.com -m command -a 'systemctl status httpd' " >> ../day2/ansible_facts
+  274  ansible servera.lab.example.com -m command -a 'systemctl status httpd'
+  275  ssh root@servera
+  276  ansible servera.lab.example.com -m command -a 'systemctl status httpd'
+  277  ansible-playbook playbook.yml 
+  278  ansible-playbook --syntax-check playbook.yml 
+  279  vim playbook.
+  280  vim playbook.yml 
+  281  ansible-playbook --syntax-check playbook.yml 
+  282  ansible-playbook playbook.yml 
+  283  vim playbook.yml 
+  284  ansible webserver -m setup
+  285  pwd
+  286  mkdir custom.fact
+  287  rndir custom.fact/
+  288  rmdir custom.fact/
+  289  vim custom.fact
+  290  vim setup_facts.yml
+  291  ansible webserver -m setup
+  292  ansible-playbook --syntax-check setup_facts.yml 
+  293  ansible-playbook setup_facts.yml 
+  294  ansible-playbook playbook.yml 
+  295  pwdf
+  296  pwd
+  297  lab control-flow setup
+  298  pwd
+  299  cd ..
+  300  ls -l
+  301  cd
+  302  mv control-flow/ ansible-training/
+  303  ls -l
+  304  pwd
+  305  cd ansible-training/
+  306  ls -l
+  307  cd ansible-training/
+  308  ls 
+  309  cd control-flow/
+  310  ;s =;
+  311  ls 
+  312  vim database_setup.yml 
+  313  vim RedHat_database_tasks.yml 
+  314  vim group_vars/database_servers.yml 
+  315  vim database_users_tasks.yml 
+  316  ansible-playbook --syntax-check database_setup.yml 
+  317  ansible-playbook database_setup.yml 
+  318  vim database_users_tasks.yml 
+  319  vim database_setup.
+  320  vim database_setup.yml 
+  321  ansible-playbook database_setup.yml 
+  322  vim database_setup.yml 
+  323  ansible-playbook database_setup.yml 
+  324  vim /home/student/ansible-training/control-flow/database_users_tasks.yml
+  325  ansible-playbook --limit @/home/student/ansible-training/control-flow/database_setup.retry
+  326  ansible-playbook database_setup.yml 
+  327  cd ..
+  328  ls -l
+  329  cd control-handlers/
+  330  ls -l
+  331  clear
+  332  pwd
+  333  vim configure_db.yml 
+  334  ansible-playbook --syntax-check configure_db.yml 
+  335  vim configure_db.yml 
+  336  ansible-playbook --syntax-check configure_db.yml 
+  337  vim configure_db.yml 
+  338  ansible-playbook --syntax-check configure_db.yml 
+  339  ansible-playbook configure_db.yml 
+  340  vim configure_db.yml 
+  341  ansible-playbook configure_db.yml 
+  342  pwd
+  343  ls -lrt
+  344  ls -lart
+  345  cd ..
+  346  ls -lart
+  347  mv data-variables/ data-secret/ data-facts/ control-flow/ control-handlers/ day2/
+  348  ls -l
+  349  mv inventory/ playbook-basic/ _config.yml  ~/.vimrc ~/.emacs.d/init.el day1/
+  350  ls -l
+  351  cd project/
+  352  ls -l
+  353  pwd
+  354  cd ..
+  355  mv project/ day1/
+  356  git status
+  357  git add .
+  358  git add -all
+  359  git add --all
+  360  git status
+  361  git commit -am "Ansible training day2"
+  362  git push
+  363  lab control-errors setup
+  364  ls -lrt
+  365  cd ..
+  366  ls -l
+  367  mv control-errors/ ansible-training/day2/
+  368  pwd
+  369  cd ansible-training/
+  370  mkdir day3
+  371  rmdir day3
+  372  git add all
+  373  git add --all
+  374  git status
+  375  git commit -am "Training Day 2
+"
+  376  git push origin master
+  377  pwd
+  378  vim README
+  379  mkdir day3
+  380  cd day
+  381  cd day3
+  382  ls -l
+  383  vim day3
+  384  vim 5-playbook.yml
+  385  cd ..
+  386  ls -l
+  387  cd day2
+  388  ls -l
+  389  cd ..
+  390  cd day1
+  391  ls -l
+  392  cp .vimrc ~/.
+  393  cd ..
+  394  cd day3
+  395  ls -l
+  396  vim 5-playbook.yml 
+  397  vim index.html
+  398  vim 5-playbook.yml 
+  399  ansible-playbook --syntax-check 5-playbook.yml 
+  400  vim inventory
+  401  ansible-playbook --syntax-check 5-playbook.yml 
+  402  vim inventory
+  403  ansible-playbook --syntax-check 5-playbook.yml 
+  404  ansible-playbook 5-playbook.yml 
+  405  vim inventory
+  406  pwd
+  407  ls -l
+  408  mv 5-playbook.yml copy-playbook.yml
+  409  ansible-doc blockinfile
+  410  vim stat.yml
+  411  pwd
+  412  ls -l
+  413  cd 
+  414  ls -l
+  415  cd ansible-training/
+  416  ls -l
+  417  cd day3
+  418  ls -l
+  419  lab control-errors setup
+  420  cd ..
+  421  cd 
+  422  mv control-errors/ ansible-training/day3/
+  423  cd ansible-training/day3
+  424  ls -l
+  425  cd control-errors/
+  426  ls -l
+  427  vim playbook.yml
+  428  ansible-playbook --syntax-check playbook.yml 
+  429  ansible-playbook playbook.yml 
+  430  vim playbook.yml
+  431  ansible-playbook playbook.yml 
+  432  vim playbook.yml
+  433  ansible-playbook playbook.yml 
+  434  vim playbook.yml
+  435  ansible-playbook playbook.yml 
+  436  vim playbook.yml
+  437  ansible-playbook playbook.yml 
+  438  vim playbook.yml
+  439  ansible-playbook playbook.yml 
+  440  vim playbook.yml
+  441  ansible-playbook playbook.yml 
+  442  vim playbook.yml
+  443  ansible-playbook playbook.yml 
+  444  vim playbook.yml
+  445  ansible-playbook playbook.yml 
+  446  c 
+  447  c d
+  448  cd
+  449  lab file-manage setup
+  450  ls -l
+  451  mv file-manage/ ansible-training/day3/
+  452  cd ansible-training/day3
+  453  ls -l
+  454  pwd
+  455  ls -l
+  456  cd file-manage/
+  457  ls -l
+  458  vim secure_log_backups.yml
+  459  ansible-playbook --syntax-check secure_log_backups.yml 
+  460  vim secure_log_backups.yml
+  461  ansible-playbook --syntax-check secure_log_backups.yml 
+  462  ansible-playbook secure_log_backups.yml 
+  463  vim copy-file.yml
+  464  ansible-playbook --sytax-check copy-file.yml 
+  465  ansible-playbook --syntax-check copy-file.yml 
+  466  ansible-playbook copy-file.yml 
+  467  vim copy-file.yml
+  468  ls -l
+  469  cd files
+  470  ls -l
+  471  cd ...
+  472  cd ..
+  473  ls -lrt
+  474  ls -l
+  475  cd ..
+  476  lab file-template setup
+  477  ls -l
+  478  cd 
+  479  mv file-template/ ansible-training/day3/
+  480  cd ansible-training/day3
+  481  ls -l
+  482  cd file-template
+  483  ls -l
+  484  vim inventory
+  485  vim motd.yml
+  486  ansible-playbook --syntax-check motd.yml
+  487  vim motd.yml
+  488  ansible-playbook --syntax-check motd.yml
+  489  ansible-playbook motd.yml
+  490   ls -l
+  491  cd files
+  492  ls -l
+  493  vim motd.yml
+  494  lab projects-host setup
+  495  pwd
+  496  cd 
+  497  ls -l
+  498  mv projects-host/ ansible-training/day3/
+  499  lab project-inventory setup
+  500  lab projects-inventory setup
+  501  pwd
+  502  mv projects-inventory/ ansible-training/day3/
+  503  cd ansible-training/day3
+  504  ls -l
+  505  cd projects-inventory/
+  506  ls -l
+  507  vim inventory
+  508  mkdir inventory
+  509  ls -l
+  510  cd inventory/
+  511  wget http://materials.example.com/labs/projects-inventory/inventorya.py -o inventorya.py
+  512  ls -l
+  513  wget http://materials.example.com/labs/projects-inventory/inventoryw.py -o inventoryw.py
+  514  wget http://materials.example.com/labs/projects-inventory/hosts -o hosts
+  515  ls -l
+  516  cd ..
+  517  ansible -i inventory/inventorya.py webservers --list-hosts
+  518  ls -l
+  519  ls -l inventory/
+  520  chmod inventory/inventorya.py
+  521  chmod 755 inventory/inventorya.py
+  522  ansible -i inventory/inventorya.py webservers --list-hosts
+  523  chmod 755 inventory/inventoryw.py
+  524  inventory/inventorya.py --list
+  525  vim inventory/inventorya.py
+  526  ls -l
+  527  cd inventory/
+  528  ls -l
+  529  cat inventorya.py
+  530  cat inventorya.py.1 
+  531  rm inventorya.py
+  532  rm inventoryw.py
+  533  mv inventorya.py.1 inventorya.py
+  534  mv inventoryw.py.1 inventoryw.py
+  535  rm hosts
+  536  mv hosts.1 hosts
+  537  chmod 755 *
+  538  ls -l
+  539  cd ..
+  540  inventory/inventorya.py --list
+  541  inventory/inventoryw.py --list
+  542  ansible webservers --list-hosts
+  543  vi inventory/hosts 
+  544  ansible webservers --list-hosts
+  545  pwd
+  546  history
+  547  cd ..
+  548  history >> day1-day2-day3.commands

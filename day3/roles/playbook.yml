@@ -1,0 +1,6 @@
+---
+- name:  testing roles
+  hosts: prod
+  become: true
+  roles:
+    - web

@@ -1,0 +1,8 @@
+---
+- name: checking stat
+  hosts: servera
+  become: true
+  tasks:
+  - name: checking the stat
+    stat:
+      

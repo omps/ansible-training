@@ -1,0 +1,9 @@
+---
+- name: testing
+  hosts: servera
+  become: true
+  tasks:
+   - name: copy the file.
+     copy:
+      src: index.html
+      dest: /tmp

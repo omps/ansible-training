@@ -1,0 +1,34 @@
+---
+- name: Task Failure Excercise
+  hosts: databases
+  vars:
+    web_package: httpd
+    db_package: mariadb-server
+    db_service: mariadb
+  tasks:
+    - name: check local time
+      command: date
+      register: command_result
+      changed_when: false
+
+    - name: print local time
+      debug:
+        var: command_result.stdout
+
+    - block:
+      - name: Install {{ web_package }} package
+        yum:
+          name: "{{ web_package }}"
+          state: present
+        failed_when: web_package == "httpd"
+
+      rescue:
+      - name: Install {{ db_package }} package
+        yum:
+          name: "{{ db_package }}"
+          state: present
+      always:
+      - name: start {{ db_service }} service
+        service:
+          name: "{{ db_service }}"
+          state: started

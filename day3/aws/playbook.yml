@@ -1,0 +1,8 @@
+---
+- name: setup the aws hosts
+  hosts: servera
+  become: true
+  - pre_tasks:
+    - name: setup the aws logging and copy keys
+  - roles:
+    - 
