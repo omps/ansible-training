@@ -1,0 +1,7 @@
+
+ # Play for FTP clients
+ - import_playbook: ftpclient.yml
+
+ # Play for FTP servers
+ - import_playbook: ansible-vsftpd.yml
+

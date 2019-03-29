@@ -1,0 +1,15 @@
+---
+- name: use myvhost role playbook
+  hosts: webservers
+  pre_tasks:
+    - name: pre_task message
+      debug:
+        msg: 'Ensure web server configuration.'
+
+  roles:
+    - myvhost
+
+  post_tasks:
+    - name: post_tasks message
+      debug:
+        msg: 'Web server is configured.'

@@ -1,0 +1,15 @@
+---
+- name: Time Syncronization
+  hosts: database_servers
+  roles:
+    - rhel-system-roles.timesync
+  post_tasks:
+    - name: set timezone
+      timezone:
+        name: "{{ host_timezone }}"
+      notify: restart crond
+  handlers:
+    - name: restart crond
+      service:
+        name: crond
+        state: restarted

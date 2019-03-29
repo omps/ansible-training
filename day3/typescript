@@ -2557,4 +2557,134 @@ With the current Git version, the command is restricted to the current directory
 ]777;notify;Command completed;git add --all ]0;student@workstation:~/ansible-training/day3/roles]7;file://workstation.lab.example.com/home/student/ansible-training/day3/roles[student@workstation roles]$ git[K[K[Kpwd
 /home/student/ansible-training/day3/roles
 ]777;notify;Command completed;pwd]0;student@workstation:~/ansible-training/day3/roles]7;file://workstation.lab.example.com/home/student/ansible-training/day3/roles[student@workstation roles]$ cd ..
-]777;notify;Command completed;cd ..]0;student@workstation:~/ansible-training/day3]7;file://workstat
+]777;notify;Command completed;cd ..]0;student@workstation:~/ansible-training/day3]7;file://workstation.lab.example.com/home/student/ansible-training/day3[student@workstation day3]$ cd ..
+]777;notify;Command completed;cd ..]0;student@workstation:~/ansible-training]7;file://workstation.lab.example.com/home/student/ansible-training[student@workstation ansible-training]$ cd ..[K[K[K[K[Kcd ..[2Ppwdgit add --all 
+]777;notify;Command completed;git add --all ]0;student@workstation:~/ansible-training]7;file://workstation.lab.example.com/home/student/ansible-training[student@workstation ansible-training]$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   README
+#	new file:   day3/README
+#	new file:   day3/aws/ansible.cfg
+#	new file:   day3/aws/inventory
+#	new file:   day3/aws/playbook.yml
+#	new file:   day3/control-errors/ansible.cfg
+#	new file:   day3/control-errors/inventory
+#	new file:   day3/control-errors/playbook.retry
+#	new file:   day3/control-errors/playbook.yml
+#	new file:   day3/copy-playbook.yml
+#	new file:   day3/day1-day2-day3.commands
+#	new file:   day3/file-manage/ansible.cfg
+#	new file:   day3/file-manage/copy-file.retry
+#	new file:   day3/file-manage/copy-file.yml
+#	new file:   day3/file-manage/files/users.txt
+#	new file:   day3/file-manage/inventory
+#	new file:   day3/file-manage/secure-backups/servera.lab.example.com/var/log/secure
+#	new file:   day3/file-manage/secure-backups/serverb.lab.example.com/var/log/secure
+#	new file:   day3/file-manage/secure_log_backups.yml
+#	new file:   day3/file-template/ansible.cfg
+#	new file:   day3/file-template/files/inventory
+#	new file:   day3/file-template/files/motd.j2
+#	new file:   day3/file-template/files/motd.yml
+#	new file:   day3/file-template/inventory
+#	new file:   day3/file-template/motd.retry
+#	new file:   day3/file-template/motd.yml
+#	new file:   day3/index.html
+#	new file:   day3/inventory
+#	new file:   day3/lab
+#	new file:   day3/projects-host/ansible.cfg
+#	new file:   day3/projects-host/inventory1
+#	new file:   day3/projects-host/inventory2
+#	new file:   day3/projects-host/playbook.yml
+#	new file:   day3/projects-inventory/ansible.cfg
+#	new file:   day3/projects-inventory/inventory/hosts
+#	new file:   day3/projects-inventory/inventory/inventorya.py
+#	new file:   day3/projects-inventory/inventory/inventoryw.py
+#	new file:   day3/roles/firewall/README.md
+#	new file:   day3/roles/firewall/defaults/main.yml
+#	new file:   day3/roles/firewall/handlers/main.yml
+#	new file:   day3/roles/firewall/meta/main.yml
+#	new file:   day3/roles/firewall/tasks/main.yml
+#	new file:   day3/roles/firewall/tests/inventory
+#	new file:   day3/roles/firewall/tests/test.yml
+#	new file:   day3/roles/firewall/vars/main.yml
+#	new file:   day3/roles/playbook.yml
+#	new file:   day3/roles/test.yaml
+#	new file:   day3/roles/web/README.md
+#	new file:   day3/roles/web/defaults/main.yml
+#	new file:   day3/roles/web/handlers/main.yml
+#	new file:   day3/roles/web/meta/main.yml
+#	new file:   day3/roles/web/tasks/main.yml
+#	new file:   day3/roles/web/tests/inventory
+#	new file:   day3/roles/web/tests/test.yml
+#	new file:   day3/roles/web/vars/main.yml
+#	new file:   day3/stat.yml
+#	new file:   day3/typescript
+#
+]777;notify;Command completed;git status]0;student@workstation:~/ansible-training]7;file://workstation.lab.example.com/home/student/ansible-training[student@workstation ansible-training]$ git commit -am "Day3 Training"
+[master fb9e80f] Day3 Training
+ 57 files changed, 4278 insertions(+)
+ create mode 100644 README
+ create mode 100644 day3/README
+ create mode 100644 day3/aws/ansible.cfg
+ create mode 100644 day3/aws/inventory
+ create mode 100644 day3/aws/playbook.yml
+ create mode 100644 day3/control-errors/ansible.cfg
+ create mode 100644 day3/control-errors/inventory
+ create mode 100644 day3/control-errors/playbook.retry
+ create mode 100644 day3/control-errors/playbook.yml
+ create mode 100644 day3/copy-playbook.yml
+ create mode 100644 day3/day1-day2-day3.commands
+ create mode 100644 day3/file-manage/ansible.cfg
+ create mode 100644 day3/file-manage/copy-file.retry
+ create mode 100644 day3/file-manage/copy-file.yml
+ create mode 100644 day3/file-manage/files/users.txt
+ create mode 100644 day3/file-manage/inventory
+ create mode 100644 day3/file-manage/secure-backups/servera.lab.example.com/var/log/secure
+ create mode 100644 day3/file-manage/secure-backups/serverb.lab.example.com/var/log/secure
+ create mode 100644 day3/file-manage/secure_log_backups.yml
+ create mode 100644 day3/file-template/ansible.cfg
+ create mode 100644 day3/file-template/files/inventory
+ create mode 100644 day3/file-template/files/motd.j2
+ create mode 100644 day3/file-template/files/motd.yml
+ create mode 100644 day3/file-template/inventory
+ create mode 100644 day3/file-template/motd.retry
+ create mode 100644 day3/file-template/motd.yml
+ create mode 100644 day3/index.html
+ create mode 100644 day3/inventory
+ create mode 100644 day3/lab
+ create mode 100644 day3/projects-host/ansible.cfg
+ create mode 100644 day3/projects-host/inventory1
+ create mode 100644 day3/projects-host/inventory2
+ create mode 100644 day3/projects-host/playbook.yml
+ create mode 100644 day3/projects-inventory/ansible.cfg
+ create mode 100755 day3/projects-inventory/inventory/hosts
+ create mode 100755 day3/projects-inventory/inventory/inventorya.py
+ create mode 100755 day3/projects-inventory/inventory/inventoryw.py
+ create mode 100644 day3/roles/firewall/README.md
+ create mode 100644 day3/roles/firewall/defaults/main.yml
+ create mode 100644 day3/roles/firewall/handlers/main.yml
+ create mode 100644 day3/roles/firewall/meta/main.yml
+ create mode 100644 day3/roles/firewall/tasks/main.yml
+ create mode 100644 day3/roles/firewall/tests/inventory
+ create mode 100644 day3/roles/firewall/tests/test.yml
+ create mode 100644 day3/roles/firewall/vars/main.yml
+ create mode 100644 day3/roles/playbook.yml
+ create mode 100644 day3/roles/test.yaml
+ create mode 100644 day3/roles/web/README.md
+ create mode 100644 day3/roles/web/defaults/main.yml
+ create mode 100644 day3/roles/web/handlers/main.yml
+ create mode 100644 day3/roles/web/meta/main.yml
+ create mode 100644 day3/roles/web/tasks/main.yml
+ create mode 100644 day3/roles/web/tests/inventory
+ create mode 100644 day3/roles/web/tests/test.yml
+ create mode 100644 day3/roles/web/vars/main.yml
+ create mode 100644 day3/stat.yml
+ create mode 100644 day3/typescript
+]777;notify;Command completed;git commit -am "Day3 Training"]0;student@workstation:~/ansible-training]7;file://workstation.lab.example.com/home/student/ansible-training[student@workstation ansible-training]$ gi [Kt c[Kpush origin masyter[K[K[K[Kter
+Username for 'https://github.com': omps
+Password for 'https://omps@github.com': 
+Counting objects: 82, done.
+Delta compression using up to 4 threads.
+Compressing objects:   2% (1/49)   Compressing objects:   4% (2/49)   Compressing objects:   6% (3/49)   Compressing objects:   8% (4/49)   Compressing objects:  10% (5/49)   Compressing objects:  12% (6/49)   Compressing objects:  14% (7/49)   Compressing objects:  16% (8/49)   Compressing objects:  18% (9/49)   Compressing objects:  20% (10/49)   Compressing objects:  22% (11/49)   Compressing objects:  24% (12/49)   Compressing objects:  26% (13/49)   Compressing objects:  28% (14/49)   Compressing objects:  30% (15/49)   Compressing objects:  32% (16/49)   Compressing objects:  34% (17/49)   Compressing objects:  36% (18/49)   Compressing objects:  38% (19/49)   Compressing objects:  40% (20/49)   Compressing objects:  42% (21/49)   Compressing objects:  44% (22/49)   Compressing objects:  46% (23/49)   Compressing objects:  48% (24/49)   Compressing objects:  51% (25/49)   Compressing objects:  53% (26/49)   Compressing objects:  55% (27/49)   Compressing objects:  57% (28/49)   Compressing objects:  59% (29/49)   Compressing objects:  61% (30/49)   Compressing objects:  63% (31/49)   Compressing objects:  65% (32/49)   Compressing objects:  67% (33/49)   Compressing objects:  69% (34/49)   Compressing objects:

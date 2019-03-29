@@ -1,0 +1,8 @@
+---
+kdump_target: null
+kdump_path: /var/crash
+kdump_core_collector: null
+kdump_system_action: reboot
+kdump_ssh_user: null
+kdump_ssh_server: null
+kdump_sshkey: /root/.ssh/kdump_id_rsa

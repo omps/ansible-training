@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+{% if kdump_target %}
+{{ kdump_target.type }} {{ kdump_target.location }}
+{% endif %}
+
+{% if kdump_target and kdump_target.kind == "ssh" and kdump_sshkey != '/root/.ssh/kdump_id_rsa' %}
+sshkey {{ kdump_sshkey }}
+{% endif %}
+
+path {{ kdump_path }}
+{% if kdump_core_collector %}
+core_collector {{ kdump_core_collector }}
+{% endif %}
+default {{ kdump_system_action }}

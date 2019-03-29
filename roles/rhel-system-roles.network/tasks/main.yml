@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# get service facts, used in defaults/main.yml
+- name: Check which services are running
+  service_facts:
+
+# needed for ansible_facts.packages
+- name: Check which packages are installed
+  package_facts:
+  no_log: true
+
+# Depending on the plugins, checking installed packages might be slow
+# for example subscription manager might slow this down
+# Therefore install packages only when rpm does not find them
+- name: Install packages
+  package:
+      name: "{{ network_packages }}"
+      state: present
+  when:
+    - not network_packages is subset(ansible_facts.packages.keys())
+
+- name: Enable network service
+  service:
+      name: "{{ network_service_name }}"
+      state: started
+      enabled: yes
+
+- name: Print network provider
+  debug:
+    msg: "Using network provider: {{ network_provider }}"
+
+- name: Configure networking connection profiles
+  network_connections:
+      provider:            "{{ network_provider           | mandatory }}"
+      ignore_errors:       "{{ network_ignore_errors      | default(omit) }}"
+      force_state_change:  "{{ network_force_state_change | default(omit) }}"
+      connections:         "{{ network_connections        | default([]) }}"
+
+- name: Re-test connectivity
+  ping:

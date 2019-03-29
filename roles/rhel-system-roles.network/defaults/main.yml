@@ -1,0 +1,56 @@
+# SPDX-License-Identifier: BSD-3-Clause
+network_connections:  []
+
+# Use initscripts for RHEL/CentOS < 7, nm otherwise
+network_provider_os_default: "{{ 'initscripts' if ansible_distribution in ['RedHat', 'CentOS'] and ansible_distribution_major_version |version_compare('7', '<') else 'nm' }}"
+# If NetworkManager.service is running, assume that 'nm' is currently in-use,
+# otherwise initscripts
+network_provider_current: "{{ 'nm' if 'NetworkManager.service' in ansible_facts.services and ansible_facts.services['NetworkManager.service']['state'] == 'running' else 'initscripts' }}"
+# Default to the auto-detected value
+network_provider: "{{ network_provider_current }}"
+
+# The python-gobject-base package depends on the python version and
+# distribution:
+# - python-gobject-base on RHEL7 (no python2-gobject-base :-/)
+# - python-gobject-base or python2-gobject-base on Fedora 27
+# - python3-gobject-base on Fedora 28+
+network_service_name_default_nm: NetworkManager
+network_packages_default_nm: [ ethtool, NetworkManager, "python{{ ansible_python['version']['major'] | replace('2', '') }}-gobject-base"]
+
+network_service_name_default_initscripts: network
+
+# initscripts requires bridge-utils to manage bridges, install it when the
+# 'bridge' type is used in network_connections
+_network_packages_default_initscripts_bridge: ["{% if ['bridge'] in network_connections|json_query('[*][type]') %}bridge-utils{% endif %}"]
+# convert _network_packages_default_initscripts_bridge to an empty list if it
+# contains only the empty string and add it to the default package list
+# |select() filters the list to include only values that evalueate to true (the empty string is false)
+# |list() converts the generator that |select() creates to a list
+network_packages_default_initscripts: "{{ ['ethtool'] + _network_packages_default_initscripts_bridge|select()|list() }}"
+
+
+# The user can explicitly set host variables "network_provider",
+# "network_service_name" and "network_packages".
+#
+# Usually, the user only wants to select the "network_provider"
+# (or not set it at all and let it be autodetected via the
+# internal variable "{{ network_provider_current }}". Hence,
+# depending on the "network_provider", a different set of
+# service-name and packages is chosen.
+#
+# That is done via the internal "_network_provider_setup" dictionary.
+# If the user doesn't explicitly set "network_service_name" or
+# "network_packages" (which he usually wouldn't), then the defaults
+# from "network_service_name_default_*" and "network_packages_default_*"
+# apply. These values are hard-coded in this file, but they also could
+# be overwritten as host variables or via vars/*.yml.
+_network_provider_setup:
+    nm:
+        service_name: "{{ network_service_name_default_nm }}"
+        packages:     "{{ network_packages_default_nm }}"
+    initscripts:
+        service_name: "{{ network_service_name_default_initscripts }}"
+        packages:     "{{ network_packages_default_initscripts }}"
+
+network_packages:     "{{ _network_provider_setup[network_provider]['packages'] }}"
+network_service_name: "{{ _network_provider_setup[network_provider]['service_name'] }}"

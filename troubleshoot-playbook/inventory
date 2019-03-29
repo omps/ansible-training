@@ -1,0 +1,6 @@
+[samba_servers]
+servera.lab.example.com
+
+[mailrelay]
+servera.lab.example.com
+

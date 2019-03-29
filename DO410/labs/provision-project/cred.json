@@ -1,0 +1,9 @@
+{
+	"name": "student-git",
+        "description": "Student Git Credential",
+        "organization": 1,
+        "credential_type": 2,
+        "inputs": {
+        "username": "git",
+        "ssh_key_data": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAxrVFt4rJh8rgluAg3U1TjjqumsknbWHp1xVlsexyWuFU3qZB\ntNGmiyHfaHK2tdIXPjAdBkyTAsmmw794vDSnYuhgx/2ji1bKfxMMvAxM2TAZSQwr\neL9ouP8FOJYsOioBBZGbPuYZ6lPHeEM5XchieaJ6/gBrxTihuvAktAQZeNGdbcH9\nR4QssfJOp8w9qL5ZMVkRWSjwBa7TwgVb0A5Dn1RWRfpcM2ks7YAI2xWeAPY6kMlG\nMeJDieQ7UXn9+rnHVHVUGpXtPvJSApe/4G9eNkj6WH4cXvPPwSUnCz0Y71TXrtU8\nUZqB7VWs6pwKEcUGAJ9jKCOgBvsOkLmX/H+2iwIDAQABAoIBAF8BMHIO00gvga3h\nPxVP8VEhUXYEEuvDUrBZNKQa7pnw/kjtqKCxVDVVXqFrp1vLNP2wt0/ZsLg2fZs9\nopYpfpZVkGBOLrFiL7MOApquLtfwnUZFoUs8CO/aTj693it5BcAJ2/X4wg89OzOO\nwJDMS/jn7HIg9WX4K6tbQdEn3J3ckduR6QySzFR4r4A6qU7hnGvz7uJSZeb9M7sR\nztUAyj4TXABRLsiB4WW5c9Pis443OLUbg0LEizSoT6TqkyXxFfjnOLFeO3llL4ws\nKinoEBU8w4t/tYXnFEUDsEmU7zOWkjJaaNTKYvwpcRLtEtgdFuej8c204kb6JC9q\nhoB9eYECgYEA+haAMO1KjNb8oyFGY9KhqD8uGzezNf2C0n2I3vu8qBE5CK/QamY/\nyWgbndp3QxpcCHvyuPlvql/5Dl0AjyGSwGfQttNgdoQTzz7xmHPiipXIpeSAVx3K\nwJlKc8lndkHVy1AN+qr2THAPR7UCwRr7+MmNq6JBv2XNhPo7Lr9mR6ECgYEAy2fT\n5/rEgfmrst78mRnJAMVT5yDgo1MAHBAi7a8EeOg1hzytCDCaGnfB9/UUAhnvvqcD\nvstDzO+F7hWs8+a6qQz8k4jfPyTg0slvjx4Ze23OtPSYAzPz4x5P4XCwGIz/avBl\nazGnIrn5kg9UQAQrHc+IEpbOFvpTb9sZl+4pHqsCgYBMKMoFHF5VoaryKtH62Ewu\npn7t/vpueLN8Uop6DYOYUxZhVNlNbbIDLdcrLTqgjsh0NPrn5d5hrjR0cVIYRIsi\nWPswkhKQRQybUnnUiYX12kNucbW70fDK0mPf+vetBcOL1OdM7P9wq7ebiL47/HG7\ng/XGzPTkyqXZ1zJqvBLzwQKBgQCmbN9vMTjTd+rKQbS/t99EaDAMLlRejazLSVCq\n1MZ9/tC9RCH3T3znJxFnxfiG9523ioN/+mQRK/GTKd0G+sPDScLnG9g9m/jvvq0u\nllwXJ3M3j+FIzZtBOy30sPUEQWlCoEr69/debHgMz8oJTt/QVltpikY5erwGC2jX\nbJ/sXQKBgQCJAXYdrXDI0sD0Lwo7u+aJLqonL20g267PfuQzqrrQyobvd2fhQTTy\n0TaLhOWLHFtf4CEUq1AalZd/SjPtuZGLdaQiR8+4WwpNx4IHeKiL/lRqxZotCxT5\naaa+xqLRqReI3wiLCHJrGkBCBDTLatnZgO2Me/x/6m6UlKW1N2KYTw==\n-----END RSA PRIVATE KEY-----\n" }
+}

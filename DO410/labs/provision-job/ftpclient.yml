@@ -1,0 +1,11 @@
+---
+- name: ftp client installed
+  hosts: all 
+
+  become: true
+
+  tasks:
+    - name: latest lftp version installed
+      yum: 
+        name: lftp 
+        state: latest

@@ -1,0 +1,152 @@
+2019-03-29 05:00:29,150 p=11777 u=student |  ERROR! Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 8, column 30, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    install_state: installed
+    random_var: This is colon: test
+                             ^ here
+
+2019-03-29 05:03:08,757 p=11884 u=student |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 44, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: deliver samba config
+   ^ here
+
+2019-03-29 05:05:44,312 p=11942 u=student |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 44, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: deliver samba config
+   ^ here
+
+2019-03-29 05:07:08,422 p=11978 u=student |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 44, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: deliver samba config
+   ^ here
+
+2019-03-29 05:07:35,380 p=12005 u=student |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 44, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: deliver samba config
+   ^ here
+
+2019-03-29 05:07:55,184 p=12044 u=student |  ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 44, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: deliver samba config
+   ^ here
+
+2019-03-29 05:08:55,895 p=12080 u=student |  ERROR! Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to have been in '/home/student/troubleshoot-playbook/samba.yml': line 14, column 15, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      name: samba
+      state: {{ install_state }}
+              ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2019-03-29 05:10:04,333 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-03-29 05:10:04,341 p=12138 u=student |  playbook: samba.yml
+2019-03-29 05:10:24,453 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-03-29 05:10:24,465 p=12152 u=student |  PLAY [Install a samba server] **********************************************************************************
+2019-03-29 05:10:24,484 p=12152 u=student |  TASK [Gathering Facts] *****************************************************************************************
+2019-03-29 05:10:35,242 p=12152 u=student |  fatal: [servera.lab.exammple.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host servera.lab.exammple.com port 22: Connection timed out\r\n", "unreachable": true}
+2019-03-29 05:10:35,246 p=12152 u=student |  	to retry, use: --limit @/home/student/troubleshoot-playbook/samba.retry
+
+2019-03-29 05:10:35,246 p=12152 u=student |  PLAY RECAP *****************************************************************************************************
+2019-03-29 05:10:35,246 p=12152 u=student |  servera.lab.exammple.com   : ok=0    changed=0    unreachable=1    failed=0   
+2019-03-29 05:11:25,140 p=12201 u=student |  ansible-playbook 2.7.1
+  config file = /home/student/troubleshoot-playbook/ansible.cfg
+  configured module search path = [u'/home/student/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Sep 12 2018, 05:31:16) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+2019-03-29 05:11:25,140 p=12201 u=student |  Using /home/student/troubleshoot-playbook/ansible.cfg as config file
+2019-03-29 05:11:25,159 p=12201 u=student |  /home/student/troubleshoot-playbook/inventory did not meet host_list requirements, check plugin documentation if this is unexpected
+2019-03-29 05:11:25,159 p=12201 u=student |  /home/student/troubleshoot-playbook/inventory did not meet script requirements, check plugin documentation if this is unexpected
+2019-03-29 05:11:25,165 p=12201 u=student |  Parsed /home/student/troubleshoot-playbook/inventory inventory source with ini plugin
+2019-03-29 05:11:25,758 p=12201 u=student |  PLAYBOOK: samba.yml ********************************************************************************************
+2019-03-29 05:11:25,759 p=12201 u=student |  1 plays in samba.yml
+2019-03-29 05:11:25,822 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-03-29 05:11:25,834 p=12201 u=student |  PLAY [Install a samba server] **********************************************************************************
+2019-03-29 05:11:25,858 p=12201 u=student |  TASK [Gathering Facts] *****************************************************************************************
+2019-03-29 05:11:25,859 p=12201 u=student |  task path: /home/student/troubleshoot-playbook/samba.yml:2
+2019-03-29 05:11:36,001 p=12201 u=student |  fatal: [servera.lab.exammple.com]: UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host servera.lab.exammple.com port 22: Connection timed out\r\n", 
+    "unreachable": true
+}
+2019-03-29 05:11:36,006 p=12201 u=student |  	to retry, use: --limit @/home/student/troubleshoot-playbook/samba.retry
+
+2019-03-29 05:11:36,007 p=12201 u=student |  PLAY RECAP *****************************************************************************************************
+2019-03-29 05:11:36,007 p=12201 u=student |  servera.lab.exammple.com   : ok=0    changed=0    unreachable=1    failed=0   
+2019-03-29 05:12:28,319 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2019-03-29 05:12:28,332 p=12254 u=student |  PLAY [Install a samba server] **********************************************************************************
+2019-03-29 05:12:28,350 p=12254 u=student |  TASK [Gathering Facts] *****************************************************************************************
+2019-03-29 05:12:30,739 p=12254 u=student |  ok: [servera.lab.example.com]
+2019-03-29 05:12:30,789 p=12254 u=student |  TASK [install samba] *******************************************************************************************
+2019-03-29 05:12:44,719 p=12254 u=student |  changed: [servera.lab.example.com]
+2019-03-29 05:12:44,740 p=12254 u=student |  TASK [install firewalld] ***************************************************************************************
+2019-03-29 05:12:45,726 p=12254 u=student |  ok: [servera.lab.example.com]
+2019-03-29 05:12:45,756 p=12254 u=student |  TASK [debug install_state variable] ****************************************************************************
+2019-03-29 05:12:45,875 p=12254 u=student |  ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2019-03-29 05:12:45,907 p=12254 u=student |  TASK [start samba] *********************************************************************************************
+2019-03-29 05:12:47,357 p=12254 u=student |  changed: [servera.lab.example.com]
+2019-03-29 05:12:47,383 p=12254 u=student |  TASK [start firewalld] *****************************************************************************************
+2019-03-29 05:12:48,120 p=12254 u=student |  ok: [servera.lab.example.com]
+2019-03-29 05:12:48,144 p=12254 u=student |  TASK [configure firewall for samba] ****************************************************************************
+2019-03-29 05:12:49,659 p=12254 u=student |  changed: [servera.lab.example.com]
+2019-03-29 05:12:49,686 p=12254 u=student |  TASK [deliver samba config] ************************************************************************************
+2019-03-29 05:12:51,330 p=12254 u=student |  changed: [servera.lab.example.com]
+2019-03-29 05:12:51,335 p=12254 u=student |  PLAY RECAP *****************************************************************************************************
+2019-03-29 05:12:51,335 p=12254 u=student |  servera.lab.example.com    : ok=8    changed=4    unreachable=0    failed=0   

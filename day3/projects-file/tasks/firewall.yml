@@ -1,0 +1,18 @@
+---
+  - name: Install the firewall
+    yum:
+      name: "{{ firewall_pkg }}"
+      state: latest
+
+  - name: Start the firewall
+    service:
+      state: started
+      name: "{{ firewall_svc }}"
+      enabled: true
+
+  - name: Open the port for {{ rule }}
+    firewalld:
+      service: "{{ rule }}"
+      immediate: true
+      permanent: true
+      state: enabled
